@@ -1,230 +1,140 @@
+/* page.module.css */
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-}
-
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
-  width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
-}
-
-.description a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.description p {
-  position: relative;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
-}
-
-.code {
-  font-weight: 700;
-  font-family: var(--font-mono);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
-  max-width: 100%;
-  width: var(--max-width);
+  padding: 20px;
 }
 
 .card {
-  padding: 1rem 1.2rem;
-  border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+  background: linear-gradient(90deg, rgba(251, 255, 224, 0.25) 0%, rgba(0, 0, 0, 0.1) 100%);
+  border: 1px solid;
+  border-image-source: linear-gradient(90deg, rgba(249, 255, 211, 0.25) 0%, rgba(249, 255, 211, 0.25) 82.62%, rgba(249, 255, 211, 0.75) 100%);
+  border-image-slice: 1;
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
 }
 
-.card span {
-  display: inline-block;
-  transition: transform 200ms;
-}
 
-.card h2 {
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-}
-
-.card p {
-  margin: 0;
-  opacity: 0.6;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  max-width: 30ch;
-  text-wrap: balance;
-}
-
-.center {
+.card-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.card-content span {
+  margin: 0 10px; 
+  color:#8C9169
+}
+
+.card-content p {
+  
+  font-size: 20px; 
+  color: white;
+}
+
+
+
+/* page.module.css */
+.backgroundContainer {
   position: relative;
-  padding: 4rem 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height, adjust as needed */
+  overflow: hidden; /* Ensure no overflow */
+  background: 
+    linear-gradient(0deg, #030300, #030300), /* Solid background */
+    linear-gradient(112.23deg, rgba(207, 239, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%), /* Gradient overlay 1 */
+    linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(207, 239, 0, 0.05) 100%); /* Gradient overlay 2 */
+  /* Optional: Add padding or margin if needed to fit your layout */
 }
 
-.center::before {
-  background: var(--secondary-glow);
-  border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -400px;
-}
-
-.center::after {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
-}
-
-.center::before,
-.center::after {
+.backgroundContainer::before {
   content: "";
-  left: 50%;
   position: absolute;
-  filter: blur(45px);
-  transform: translateZ(0);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://s3-alpha-sig.figma.com/img/d775/7bb6/7df1b81a6cdacc6afd642e7ea518cf06?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ofr3DYb8XOvliq7wN5-UB4oNq~7T6DswDUCqtvMRlkyjpfaPr3xafLj3j3Q0MH4Uh9HZE~YMyycQdJ5vbphjrUzqIztYDEcQR62e7iG9XCaiVYZfPXCYqXNRWLq3e0j7bp5pw7XoWSS6xTFqo5xvU7VPkTtB3o8ruEl3NMJ3QantC8ZFa56wZz8GrZa-HX06goeoGmqjOMEqPe3qBj9mjNuBO5WbqUsY36m~kFhy3rzdbGWxGBOjpZnfVsx7qWZLmeZFUXvLdLbSKbw11ptr5RON34OeOJFQpd33qLeIc-tQmYaUCjsIjqg~3a51BnBEJ5opvLi89dZNHqFJR4b2mQ__');
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
+  opacity: 0.3; /* Adjust opacity of the background image */
+ /* Place the pseudo-element behind the content */
 }
 
-.logo {
-  position: relative;
-}
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
-  }
 
-  .card:hover span {
-    transform: translateX(4px);
-  }
+.cardDetails {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion) {
-  .card:hover span {
-    transform: none;
-  }
+.cardDetails .detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  font-size: 14px;
 }
 
-/* Mobile */
-@media (max-width: 700px) {
-  .content {
-    padding: 4rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 120px;
-    max-width: 320px;
-    text-align: center;
-  }
-
-  .card {
-    padding: 1rem 2.5rem;
-  }
-
-  .card h2 {
-    margin-bottom: 0.5rem;
-  }
-
-  .center {
-    padding: 8rem 0 6rem;
-  }
-
-  .center::before {
-    transform: none;
-    height: 300px;
-  }
-
-  .description {
-    font-size: 0.8rem;
-  }
-
-  .description a {
-    padding: 1rem;
-  }
-
-  .description p,
-  .description div {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-  }
-
-  .description p {
-    align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
-    background-clip: padding-box;
-    backdrop-filter: blur(24px);
-  }
-
-  .description div {
-    align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
-    z-index: 1;
-  }
+.cardDetails span {
+  display: block;
+  margin-bottom: 5px;
 }
 
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
+/* Target the legend items and checkboxes */
+.chart-container .chartjs-legend {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+  justify-content: center; /* Center the legend items horizontally */
 }
 
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
+.chart-container .chartjs-legend .legend-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 10px; /* Space between legend items */
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+/* Style for legend color boxes with rounded borders */
+.chart-container .chartjs-legend .legend-item input {
+  border-radius: 50%; /* Rounded checkboxes */
+  border: 2px solid #000; /* Border color for visibility */
+  width: 12px; /* Size of the checkbox */
+  height: 12px;
+  margin-right: 8px; /* Space between checkbox and label */
+  accent-color: transparent; /* Remove default checkbox color */
+  background: #fff; /* Background color of the checkbox */
+  cursor: pointer;
 }
+
+/* Style for numeric values next to labels */
+.chart-container .chartjs-legend .legend-item label {
+  margin-left: 8px; /* Space between checkbox and label */
+  display: flex;
+  align-items: center;
+}
+
+/* Style for numeric values in the legend */
+.chart-container .chartjs-legend .legend-item .legend-label {
+  margin-left: 10px; /* Space between label and numeric value */
+  font-weight: bold; /* Optional: make numeric values bold */
+}
+
+.timeframebuttons {
+  display: flex;
+  justify-content: end;
+  gap: 0px;
+}
+
+.timeframebuttons button {
+  background-color: #CFEF0033;
+  color: #212121;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.timeframebuttons button:hover {
+  background-color: #FFEA00;
+  border-radius: 10px;
+}
+
+
